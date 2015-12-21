@@ -1,0 +1,17 @@
+#!/bin/sh
+
+bootstrap() {
+  echo "/Users/qw3rtman/Documents/github/qw3rtman/coral/lib/require.sh"
+}
+
+if test $# -eq 0; then
+	# display_help
+  echo "help goes here"
+else
+	while test $# -ne 0; do
+		case $1 in
+			bootstrap) bootstrap ;;
+		esac
+		shift
+	done
+fi
