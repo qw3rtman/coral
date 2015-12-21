@@ -1,7 +1,7 @@
 #!/bin/sh
 
 bootstrap() {
-  echo "/Users/qw3rtman/Documents/github/qw3rtman/coral/lib/require.sh"
+  echo "/Users/qw3rtman/Documents/github/qw3rtman/coral/shell_modules/coral-require/lib/require.sh"
 }
 
 install_local() {
@@ -17,7 +17,7 @@ install_local() {
     rm -rf "$1"
   fi
 
-  git clone "https://github.com/qw3rtman/$1.git" --quiet
+  git clone "https://github.com/CoralSH/$1.git" --quiet
 
   echo "installed $1!"
 }
