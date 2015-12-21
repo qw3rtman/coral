@@ -1,7 +1,9 @@
 #!/bin/sh
 
+bootstrap_location="/Users/qw3rtman/Documents/github/qw3rtman/coral/shell_modules/coral-require/lib/require.sh"
+
 bootstrap() {
-  echo "/Users/qw3rtman/Documents/github/qw3rtman/coral/shell_modules/coral-require/lib/require.sh"
+  echo "$bootstrap_location"
 }
 
 install_local() {
