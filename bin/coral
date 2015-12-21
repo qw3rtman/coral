@@ -4,6 +4,24 @@ bootstrap() {
   echo "/Users/qw3rtman/Documents/github/qw3rtman/coral/lib/require.sh"
 }
 
+install_local() {
+  if [ ! -d "shell_modules" ]; then
+    mkdir "shell_modules"
+  fi
+
+  echo "installing $1"
+
+  cd "shell_modules"
+
+  if [ -d "$1" ]; then
+    rm -rf "$1"
+  fi
+
+  git clone "https://github.com/qw3rtman/$1.git" --quiet
+
+  echo "installed $1!"
+}
+
 if test $# -eq 0; then
 	# display_help
   echo "help goes here"
@@ -11,6 +29,7 @@ else
 	while test $# -ne 0; do
 		case $1 in
 			bootstrap) bootstrap ;;
+      install) install_local ${@:2} ;;
 		esac
 		shift
 	done
