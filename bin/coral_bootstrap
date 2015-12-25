@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "/usr/local/lib/shell_modules/coral/shell_modules/coral-require/lib/require.sh"
