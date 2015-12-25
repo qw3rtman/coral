@@ -3,43 +3,13 @@
 . $(coral_bootstrap)
 require "coral-core"
 
-install_local() {
-  modules_directory=$(pwd)
-
-  while [ ! -f "$modules_directory/package.sh" ]; do
-    modules_directory=${modules_directory%/*}
-    if [ "$modules_directory" = "/" ]; then
-      echo "couldn't find shell_modules"
-      exit
-    fi
-  done
-
-  cd "$modules_directory"
-
-  if [ ! -d "shell_modules" ]; then
-    mkdir "shell_modules"
-  fi
-
-  echo "installing $1"
-
-  cd "shell_modules"
-
-  if [ -d "$1" ]; then
-    rm -rf "$1"
-  fi
-
-  git clone "https://github.com/CoralSH/$1.git" --quiet
-
-  echo "installed $1!"
-}
-
 if test $# -eq 0; then
 	# display_help
   echo "help goes here"
 else
 	while test $# -ne 0; do
 		case $1 in
-      install) install_local ${@:2} ;;
+      install) coral-core command_install ${@:2} ;;
       init) coral-core command_init ;;
 		esac
 		shift
