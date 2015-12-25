@@ -40,6 +40,7 @@ else
 	while test $# -ne 0; do
 		case $1 in
       install) install_local ${@:2} ;;
+      init) coral-core command_init ;;
 		esac
 		shift
 	done
