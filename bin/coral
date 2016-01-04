@@ -8,13 +8,10 @@ VERSION="0.0.1"
 if test $# -eq 0; then
 	coral-core display_help
 else
-	while test $# -ne 0; do
-		case $1 in
-      install) coral-core command_install "$PWD" ${@:2} ;;
-      init) coral-core command_init ;;
-      -h|--help|help) coral-core display_help ;;
-			-V|--version) echo $VERSION ;;
-		esac
-		shift
-	done
+	case $1 in
+    install) coral-core command_install "$PWD" ${@:2} ;;
+    init) coral-core command_init ;;
+    -h|--help|help) coral-core display_help ${@:2} ;;
+		-V|--version) echo $VERSION ;;
+	esac
 fi
