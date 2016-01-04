@@ -3,6 +3,8 @@
 . $(coral_bootstrap)
 require "coral-core"
 
+VERSION="0.0.1"
+
 if test $# -eq 0; then
 	coral-core display_help
 else
@@ -11,6 +13,7 @@ else
       install) coral-core command_install "$PWD" ${@:2} ;;
       init) coral-core command_init ;;
       -h|--help|help) coral-core display_help ;;
+			-V|--version) echo $VERSION ;;
 		esac
 		shift
 	done
